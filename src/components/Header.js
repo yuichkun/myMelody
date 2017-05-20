@@ -3,8 +3,7 @@ export default class Header extends React.Component{
   render(){
     return (
       <div>
-        <h1>myMelodyadkls</h1>
-        	<button className=".btm">alskdjf</button>
+        <h1 className="text-center">Welcome to MyMelody</h1>
       </div>
     );
   }

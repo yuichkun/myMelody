@@ -1,11 +1,19 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-import Header from './Header';
+import Header from './components/Header';
+import Video from './components/Video';
+import ToolBox from './components/ToolBox';
+import Sequencer from './components/Sequencer';
 
 class App extends React.Component{
   render(){
     return (
-      <Header />
+      <div>
+        <Header />
+        <Video />
+        <ToolBox />
+        <Sequencer />
+      </div>
     );
   }
 }

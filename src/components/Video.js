@@ -7,7 +7,6 @@ export default class Video extends React.Component {
     render() {
         return (
           <div id = "ytVideo" >
-            Video
             <YoutubePlayer
                 videoId='k8ROjT2qbo0'
                 playbackState='unstarted'

@@ -1,9 +1,19 @@
 import React from 'react';
+import AppBar from 'material-ui/AppBar';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 export default class Header extends React.Component{
   render(){
     return (
       <div>
-        <h1 className="text-center">Welcome to MyMelody</h1>
+        <AppBar
+          title="My Melody"
+          titleStyle={{
+            textAlign: 'center'
+          }}
+          iconClassNameRight="muidocs-icon-navigation-expand-more"
+          showMenuIconButton={false}
+        />
       </div>
     );
   }

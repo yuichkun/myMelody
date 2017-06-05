@@ -33,7 +33,7 @@ export default class Sequencer extends React.Component {
         if(counter >= 8){
           counter = 0;
         }
-        const multArr = [1.0, 1.189, 1.334, 1.498, 1.781];
+        const multArr = [1.781, 1.498, 1.334, 1.189, 1.0];
         const target = this.props.gridState[counter];
         if(this.props.toneType === 0){
           // const rate = scale(target, 0, 7, 3, 1);
@@ -42,7 +42,6 @@ export default class Sequencer extends React.Component {
           playBuffer(this.props.sampleID);
         } else {
           const freq = 440;
-          const multArr = [1.0, 1.189, 1.334, 1.498, 1.781];
           playOsc(this.props.intervalTime * 0.5, freq * multArr[target]);
         }
       };

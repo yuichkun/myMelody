@@ -8,6 +8,7 @@ const soundFiles = _.map(sounds, (sound)=>{
   soundFile.name = sound.name;
   if(sound.url != null){
     soundFile.url = path.join(__dirname + '/sounds/' + sound.url);
+    // soundFile.url = path.join(__dirname + 'myMelody/sounds/' + sound.url);
     soundFile.sampleID = idCounter;
     soundFile.toneType = 0;
     idCounter++;

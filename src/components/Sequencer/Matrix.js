@@ -14,6 +14,10 @@ const matrixStyle = {
   justifyContent: 'space-around'
 };
 
+const PLAIN_COLOR = '#FAFAFA';
+const SELECTED_COLOR = '#DCE775';
+const HIT_COLOR = '#4DD0E1';
+
 class Matrix extends React.Component{
   render(){
     return this.createMatrix();
@@ -39,7 +43,15 @@ class Matrix extends React.Component{
   renderColumns(rowIndex){
     let columns = [];
     for(let i = 0; i < 5; i++){
-        const color = this.props.gridState[rowIndex] === i? '#DCE775' : '#FAFAFA';
+        const gridState = this.props.gridState[rowIndex];
+        let color = PLAIN_COLOR;
+        if(gridState === i){
+          color = SELECTED_COLOR;
+          if(this.props.counter === rowIndex){
+            color = HIT_COLOR;
+          }
+        }
+        // const color = this.props.gridState[rowIndex] === i? '#DCE775' : '#FAFAFA';
         columns.push(<Block key={i} color={{backgroundColor: color}} rowIndex={rowIndex} columnIndex={i} gridState={this.props.gridState} changeGridState={this.props.changeGridState}/>);
     }
     return (

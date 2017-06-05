@@ -5,7 +5,7 @@ import SeekBar from './SeekBar';
 import { playBuffer, playOsc, changePlaybackRate } from '../../modules/SoundControl';
 import scale from 'scale-number-range';
 const wrapperStyle = {
-    backgroundColor: '#DDDDFF',
+    backgroundColor: '#E3F2FD',
     marginLeft: 'auto',
     marginRight: 'auto',
     width: '100%'
@@ -29,10 +29,8 @@ export default class Sequencer extends React.Component {
       };
       const callback = ()=>{
         thread();
-        counter++;
-        if(counter >= 8){
-          counter = 0;
-        }
+        this.props.incCounter();
+        const counter = this.props.counter;
         const multArr = [1.781, 1.498, 1.334, 1.189, 1.0];
         const target = this.props.gridState[counter];
         if(this.props.toneType === 0){
@@ -44,6 +42,7 @@ export default class Sequencer extends React.Component {
           const freq = 440;
           playOsc(this.props.intervalTime * 0.5, freq * multArr[target]);
         }
+
       };
       thread();
     }

@@ -8,6 +8,7 @@ import reducer from './reducers/reducer';
 import changeGridState from './actions/changeGridState';
 import changeIntervalTime from './actions/changeIntervalTime';
 import changeToneType from './actions/changeToneType';
+import incCounter from './actions/incCounter';
 const store = createStore(
   reducer,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -24,6 +25,9 @@ const mapDispatchToProps = (dispatch)=>{
     },
     changeToneType: (toneType, sampleID)=>{
       dispatch(changeToneType(toneType, sampleID));
+    },
+    incCounter: ()=>{
+      dispatch(incCounter());
     }
   };
 };

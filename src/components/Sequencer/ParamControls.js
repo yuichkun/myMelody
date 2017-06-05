@@ -69,7 +69,7 @@ export default class ParamControls extends React.Component {
         changeHighFilter(newVal);
     }
     onBPMChange(e, val) {
-        const time = scale(val, 0, 1, 1000, 10);
+        const time = scale(val, 0, 1, 500, 10);
         this.props.changeIntervalTime(time);
     }
 }
